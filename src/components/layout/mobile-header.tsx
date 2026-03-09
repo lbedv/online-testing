@@ -4,6 +4,7 @@ import { LogOut, Menu } from "lucide-react"
 import { TestPlatformLogo } from "./testplatform-logo"
 import { Button } from "@/components/ui/button"
 import { Separator } from "../ui/separator"
+import { ThemeToggle } from "./theme-toggle"
 import {
   Sheet,
   SheetContent,
@@ -55,6 +56,10 @@ export function MobileHeader() {
           </nav>
           <div className="p-4">
             <Separator className="mb-4" />
+            <div className="flex items-center gap-2 mb-4">
+              <ThemeToggle />
+              <span className="text-sm text-muted-foreground font-medium">Theme</span>
+            </div>
             <NavItem
               icon={<LogOut className="h-4 w-4 shrink-0" />}
               label="Logout"
