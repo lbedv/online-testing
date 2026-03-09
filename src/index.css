@@ -1,68 +1,212 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@plugin "tailwindcss-animate";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  /* =============================================
+     Colors — maps to bg-*, text-*, border-* etc.
+     These become --color-background, --color-primary, etc.
+  ============================================= */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Sidebar — custom namespace */
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Border radius (maps to rounded-*, etc.) */
+  --radius: 0.75rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Custom animations (accordion) */
+  @keyframes accordion-down {
+    from { height: 0 }
+    to   { height: var(--radix-accordion-content-height) }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height) }
+    to   { height: 0 }
+  }
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up:   accordion-up 0.2s ease-out;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* ─────────────── Light theme ─────────────── */
+    --background:    210 20% 98.5%;
+    --foreground:    220 12% 10%;
+    --card:          210 14% 96.5%;
+    --card-foreground: 220 12% 12%;
+
+    --popover:       210 12% 98%;
+    --popover-foreground: 220 12% 12%;
+
+    --primary:       225 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary:     243 75% 62%; 
+    --secondary-foreground: 0 0% 100%;
+
+    --muted:         210 35% 96%;
+    --muted-foreground: 215 14% 38%;
+
+    --accent:        235 70% 92%;
+    --accent-foreground: 235 80% 40%;
+
+    --destructive:   350 85% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success:       160 75% 46%;
+    --success-foreground: 0 0% 100%;
+
+    --warning:       38 92% 54%;
+    --warning-foreground: 220 60% 8%;
+    
+    --border:        215 28% 86%;
+    --input:         215 28% 86%;
+    --ring:          225 85% 55%;
+
+    /* Chart colors */
+    --chart-1: 225 85% 55%;
+    --chart-2: 243 75% 62%;
+    --chart-3: 188 80% 52%;
+    --chart-4: 265 55% 62%; 
+    --chart-5:  42 90% 56%;
+
+    /* Sidebar light */
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 220 12% 12%;
+    --sidebar-primary: 225 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 235 50% 94%;
+    --sidebar-accent-foreground: 225 80% 25%;
+    --sidebar-border: 215 32% 88%;
+    --sidebar-ring: 225 85% 55%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    /* ─────────────── Dark theme ─────────────── */
+    --background:    220 18% 8%;
+    --foreground:    210 30% 95%;
+
+    --card:          220 14% 13%;
+    --card-foreground: 210 30% 95%;
+
+    --popover:       220 14% 9%;
+    --popover-foreground: 210 25% 92%;
+
+    --primary:       225 85% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary:     243 75% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted:         220 16% 18%;
+    --muted-foreground: 215 18% 78%;
+
+    --accent:        235 50% 20%;
+    --accent-foreground: 235 80% 85%;
+
+    --destructive:   350 85% 64%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success:       160 75% 52%;
+    --success-foreground: 0 0% 100%;
+
+    --warning:       40 90% 58%;
+    --warning-foreground: 220 60% 10%;
+
+    --border:        220 16% 22%;
+    --input:         220 16% 22%;
+    --ring:          225 85% 65%;
+
+    /* Chart colors */
+    --chart-1: 225 85% 65%;
+    --chart-2: 243 75% 62%;
+    --chart-3: 188 80% 58%;
+    --chart-4: 265 55% 70%; 
+    --chart-5:  42 90% 64%;
+
+    /* Sidebar dark */
+    --sidebar-background: 220 20% 5.5%;
+    --sidebar-foreground: 210 30% 95%;
+    --sidebar-primary: 225 85% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 235 40% 18%;
+    --sidebar-accent-foreground: 235 80% 90%;
+    --sidebar-border: 220 16% 20%;
+    --sidebar-ring: 225 85% 65%;
   }
-  button {
-    background-color: #f9f9f9;
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  button,
+  a,
+  [role="button"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    @apply cursor-pointer;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
