@@ -1,0 +1,1 @@
+export const CatalogPage = () => <div><h1>Test Catalog</h1></div>;

@@ -1,0 +1,1 @@
+export const MyTestsPage = () => <div><h1>My Tests</h1></div>;
