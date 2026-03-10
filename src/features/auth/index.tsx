@@ -1,0 +1,1 @@
+export { AuthBackground } from "./components/auth-background"
