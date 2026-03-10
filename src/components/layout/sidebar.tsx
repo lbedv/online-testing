@@ -5,7 +5,7 @@
  */
 import { useNavigate, useLocation } from "@tanstack/react-router"
 import { LogOut } from "lucide-react"
-import { TestPlatformLogo } from "./testplatform-logo"
+import { TestPlatformLogo } from "../common"
 import { Separator } from "@/components/ui/separator"
 import { ThemeToggle } from "./theme-toggle"
 import { NavItem } from "./nav-item"
