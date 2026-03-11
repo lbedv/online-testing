@@ -39,16 +39,28 @@ export function RegisterCard() {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
-        <FormInput
-          id="name"
-          label="Full name"
-          placeholder="Your name"
-          required
-          disabled={isLoading}
-          inputClassName={inputClassName}
-          {...register("fullName")}
-          error={errors.fullName?.message}
-        />
+        <div className="flex flex-col sm:flex-row gap-4">
+            <FormInput
+              id="firstName"
+              label="First Name"
+              placeholder="John"
+              required
+              disabled={isLoading}
+              inputClassName={inputClassName + " flex-1"}
+              {...register("firstName")}
+              error={errors.firstName?.message}
+            />
+            <FormInput
+              id="lastName"
+              label="Last Name"
+              placeholder="Doe"
+              required
+              disabled={isLoading}
+              inputClassName={inputClassName + " flex-1"}
+              {...register("lastName")}
+              error={errors.lastName?.message}
+            />
+          </div>
 
         <FormInput
           id="email"

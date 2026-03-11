@@ -16,7 +16,8 @@ export type LoginFormData = z.infer<typeof LoginSchema>
  * Enforces password requirements and matching confirmation password.
  */
 export const RegisterSchema = z.object({
-  fullName: z.string().min(2, "Name must be at least 2 characters"),
+  firstName: z.string().min(2, "First name must be at least 2 characters"),
+  lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.email("Invalid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
   confirmPassword: z.string(),
