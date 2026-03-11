@@ -1,24 +1,34 @@
 import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
 import PathConstants from "@/routes/path-constants"
-import { Link } from "@tanstack/react-router"
+import { Link, useNavigate } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
 import { FormInput, TestPlatformLogo } from "@/components/common"
 import { Loader2Icon } from "lucide-react"
+import { RegisterSchema, type RegisterFormData } from "../schemas"
 
 const inputClassName =
   "h-11 rounded-xl bg-background/60 transition-all duration-200 focus:bg-background dark:bg-muted/30 dark:focus:bg-muted/50"
 
 export function RegisterCard() {
   const [isLoading, setIsLoading] = useState(false)
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
+  const navigate = useNavigate()
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormData>({
+    resolver: zodResolver(RegisterSchema),
+  })
+
+  const onSubmit = () => {
     setIsLoading(true)
-    setTimeout(() => setIsLoading(false), 2000)
+    setTimeout(() => {
+      setIsLoading(false)
+      navigate({ to: PathConstants.INDEX })
+    }, 2000)
   }
 
   return (
@@ -28,16 +38,16 @@ export function RegisterCard() {
         <p className="text-sm text-muted-foreground">Create a new account</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
         <FormInput
           id="name"
           label="Full name"
           placeholder="Your name"
-          value={name}
-          onChange={setName}
           required
           disabled={isLoading}
           inputClassName={inputClassName}
+          {...register("fullName")}
+          error={errors.fullName?.message}
         />
 
         <FormInput
@@ -45,37 +55,37 @@ export function RegisterCard() {
           label="Email"
           type="email"
           placeholder="you@example.com"
-          value={email}
-          onChange={setEmail}
           required
           disabled={isLoading}
           autoComplete="email"
           inputClassName={inputClassName}
+          {...register("email")}
+          error={errors.email?.message}
         />
 
         <FormInput
           id="password"
           label="Password"
           placeholder="Enter your password"
-          value={password}
-          onChange={setPassword}
           required
           showPasswordToggle
           disabled={isLoading}
           autoComplete="new-password"
           inputClassName={inputClassName}
+          {...register("password")}
+          error={errors.password?.message}
         />
 
         <FormInput
           id="confirm-password"
           label="Confirm password"
           placeholder="Repeat your password"
-          value={confirmPassword}
-          onChange={setConfirmPassword}
           required
           showPasswordToggle
           disabled={isLoading}
           inputClassName={inputClassName}
+          {...register("confirmPassword")}
+          error={errors.confirmPassword?.message}
         />
 
         <Button
