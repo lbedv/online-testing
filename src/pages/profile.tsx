@@ -1,4 +1,4 @@
-import { ProfileHeader, ProfileForm } from "@/features/profile";
+import { ProfileHeader, ProfileForm, PasswordForm } from "@/features/profile";
 import { Separator } from "@/components/ui/separator";
 import { PageHeader } from "@/components/common/page-header";
 
@@ -29,6 +29,7 @@ export function ProfilePage() {
           initialLastName={user.lastName}
           initialEmail={user.email}
         />
+        <PasswordForm/>
       </div>
     </div>
   )
