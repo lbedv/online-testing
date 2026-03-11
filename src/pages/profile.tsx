@@ -1,7 +1,15 @@
+import { ProfileHeader } from "@/features/profile";
 import { Separator } from "@/components/ui/separator";
 import { PageHeader } from "@/components/common/page-header";
 
 export function ProfilePage() {
+  const user = {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    registeredAt: "March 5, 2024",
+  }
+
   return (
     <div className="flex flex-col gap-8">
       <PageHeader
@@ -9,6 +17,14 @@ export function ProfilePage() {
         description="Manage your account information and security settings."
       />
       <Separator />
+      <div className="mx-auto flex w-full max-w-xl flex-col gap-8">
+        <ProfileHeader
+          firstName={user.firstName}
+          lastName={user.lastName}
+          email={user.email}
+          registeredAt={user.registeredAt}
+        />
+      </div>
     </div>
   )
 }
