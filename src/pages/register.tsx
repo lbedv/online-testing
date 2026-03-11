@@ -1,1 +1,9 @@
-export const RegisterPage = () => <div><h1>Register Page</h1></div>;
+import { RegisterCard, AuthBackground } from "@/features/auth"
+
+export function RegisterPage() {
+  return (
+    <AuthBackground>
+      <RegisterCard />
+    </AuthBackground>
+  )
+}

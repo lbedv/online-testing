@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate, useLocation } from "@tanstack/react-router"
 import { LogOut, Menu } from "lucide-react"
-import { TestPlatformLogo } from "./testplatform-logo"
+import { TestPlatformLogo } from "../common"
 import { Button } from "@/components/ui/button"
 import { Separator } from "../ui/separator"
 import { ThemeToggle } from "./theme-toggle"
