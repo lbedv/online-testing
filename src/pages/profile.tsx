@@ -1,14 +1,9 @@
 import { ProfileHeader, ProfileForm, PasswordForm } from "@/features/profile";
 import { Separator } from "@/components/ui/separator";
 import { PageHeader } from "@/components/common/page-header";
+import { user } from "@/features/profile/mock-data";
 
 export function ProfilePage() {
-  const user = {
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@example.com",
-    registeredAt: "March 5, 2024",
-  }
 
   return (
     <div className="flex flex-col gap-8">
