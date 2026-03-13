@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { CalendarDays, Mail } from "lucide-react"
-import { formatDate } from "@/lib/date"
+import { formatDate } from "@/shared/lib/date"
 
 interface ProfileHeaderProps {
   firstName: string

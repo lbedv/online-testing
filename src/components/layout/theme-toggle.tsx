@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@/shared/lib/utils"
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme()

@@ -2,7 +2,7 @@ import { useState, forwardRef } from "react"
 import { Eye, EyeOff } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { cn } from "@/lib/utils"
+import { cn } from "@/shared/lib/utils"
 
 export interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string

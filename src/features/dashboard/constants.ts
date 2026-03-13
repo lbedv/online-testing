@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react"
 import { FileText, TrendingUp, Clock, Award } from "lucide-react"
-import { formatRelativeTime } from "@/lib/date"
+import { formatRelativeTime } from "@/shared/lib/date"
 
 export const ITEMS_PER_PAGE = 6
 

@@ -3,8 +3,8 @@ import PathConstants from "@/routes/path-constants"
 import { Button } from "@/components/ui/button"
 import { Pagination } from "@/components/common"
 import { AttemptCard } from "./attempt-card"
-import { formatDuration, formatRelativeTime } from "@/lib/date"
-import { usePagination } from "@/hooks/use-pagination"
+import { formatDuration, formatRelativeTime } from "@/shared/lib/date"
+import { usePagination } from "@/shared/hooks/use-pagination"
 import { ITEMS_PER_PAGE } from "../constants"
 
 interface AttemptItem {
