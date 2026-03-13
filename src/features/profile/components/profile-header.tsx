@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { CalendarDays, Mail } from "lucide-react"
+import { formatDate } from "@/lib/date"
 
 interface ProfileHeaderProps {
   firstName: string
@@ -38,7 +39,7 @@ export function ProfileHeader({
         </div>
         <div className={`flex items-center justify-center gap-1.5 text-xs text-muted-foreground`}>
           <CalendarDays className="h-3 w-3" />
-          <span>{`Member since ${registeredAt}`}</span>
+          <span>{`Member since ${formatDate(registeredAt)}`}</span>
         </div>
       </div>
     </div>
