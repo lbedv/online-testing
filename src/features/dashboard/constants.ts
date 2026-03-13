@@ -2,6 +2,8 @@ import type { LucideIcon } from "lucide-react"
 import { FileText, TrendingUp, Clock, Award } from "lucide-react"
 import { formatRelativeTime } from "@/lib/date"
 
+export const ITEMS_PER_PAGE = 6
+
 /**
  * Maps dashboard stat keys to their corresponding icon and color configuration.
  * Used to display statistics consistently with semantic colors.

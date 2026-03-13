@@ -1,6 +1,6 @@
-import { WelcomeHeader, StatsPanel } from "@/features/dashboard"
+import { WelcomeHeader, StatsPanel, AttemptsList } from "@/features/dashboard"
 import { Separator } from "@/components/ui/separator"
-import { MOCK_SERVER_DATA } from "@/features/dashboard/mock-data"
+import { MOCK_SERVER_DATA, RECENT_ATTEMPTS } from "@/features/dashboard/mock-data"
 
 export function DashboardPage() {
   return (
@@ -8,6 +8,7 @@ export function DashboardPage() {
       <WelcomeHeader firstName="John" lastName="Doe" />
       <StatsPanel stats={MOCK_SERVER_DATA} />
       <Separator />
+      <AttemptsList attempts={RECENT_ATTEMPTS} />
     </div>
   )
 }
