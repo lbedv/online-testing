@@ -9,6 +9,12 @@ export function formatDate(isoString: string): string {
   }).format(date);
 }
 
+export function formatDuration(totalSeconds: number): string {
+  const minutes = Math.floor(totalSeconds / 60)
+  const seconds = totalSeconds % 60
+  return `${minutes}m ${seconds}s`
+}
+
 export function formatRelativeTime(isoString: string): string {
   const date = new Date(isoString);
   const now = new Date();
@@ -18,7 +24,7 @@ export function formatRelativeTime(isoString: string): string {
   const absDiff = Math.abs(diffInSeconds);
 
   // Initialize the native relative time formatter
-  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'always' });
 
   // Determine the best unit to display
   if (absDiff < 60) {
