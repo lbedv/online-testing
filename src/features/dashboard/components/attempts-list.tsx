@@ -3,41 +3,18 @@ import PathConstants from "@/routes/path-constants"
 import { Button } from "@/components/ui/button"
 import { Pagination } from "@/components/common"
 import { AttemptCard } from "./attempt-card"
-import { formatDuration, formatRelativeTime } from "@/shared/lib/date"
 import { usePagination } from "@/shared/hooks/use-pagination"
 import { ITEMS_PER_PAGE } from "../constants"
-
-interface AttemptItem {
-  id: string
-  testId: string
-  testTitle: string
-  testCategory: string
-  score: number
-  totalPoints: number
-  timeTakenSeconds: number
-  completedAt: string
-  passed: boolean
-}
+import type { AttemptItem } from "../types"
 
 interface AttemptsListProps{
   attempts: AttemptItem[]
 }
 
 export function AttemptsList({ attempts }: AttemptsListProps) {
-  const items = attempts.map((attempt) => {
-    const percentage = Math.round((attempt.score / attempt.totalPoints) * 100)
-    const timeTaken = formatDuration(attempt.timeTakenSeconds)
-    const completedAt = formatRelativeTime(attempt.completedAt)
-    return {
-      ...attempt,
-      percentage,
-      timeTaken,
-      completedAt
-    }
-  })
 
   const { paginatedItems, currentPage, totalPages, setCurrentPage } = 
-    usePagination(items, ITEMS_PER_PAGE)
+    usePagination(attempts, ITEMS_PER_PAGE)
 
   return (
     <section>
@@ -52,7 +29,7 @@ export function AttemptsList({ attempts }: AttemptsListProps) {
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {paginatedItems.map((item) => (
-          <AttemptCard key={item.id} {...item} />
+          <AttemptCard key={item.id} attempt={item} />
         ))}
       </div>
 

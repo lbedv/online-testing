@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react"
 import { FileText, TrendingUp, Clock, Award } from "lucide-react"
-import { formatRelativeTime } from "@/shared/lib/date"
 
 export const ITEMS_PER_PAGE = 6
 
@@ -16,7 +15,6 @@ export const STAT_ICON_MAP: Record<
     icon: LucideIcon;
     iconColor: string;
     iconBg: string;
-    formatValue: (val: string | number) => string
   }
 > = {
   "total-tests-taken": {
@@ -25,7 +23,6 @@ export const STAT_ICON_MAP: Record<
     icon: FileText,
     iconColor: "text-primary",
     iconBg: "bg-primary/10",
-    formatValue: (val) => String(val),
   },
   "average-score": {
     title: "Average Score",
@@ -33,7 +30,6 @@ export const STAT_ICON_MAP: Record<
     icon: TrendingUp,
     iconColor: "text-success",
     iconBg: "bg-success/10",
-    formatValue: (val) => `${val}%`,
   },
   "tests-created": {
     title: "Tests Created",
@@ -41,7 +37,6 @@ export const STAT_ICON_MAP: Record<
     icon: Award,
     iconColor: "text-secondary",
     iconBg: "bg-secondary/10",
-    formatValue: (val) => String(val),
   },
   "recent-activity": {
     title: "Recent Activity",
@@ -49,7 +44,6 @@ export const STAT_ICON_MAP: Record<
     icon: Clock,
     iconColor: "text-warning",
     iconBg: "bg-warning/10",
-    formatValue: (val) => formatRelativeTime(val as string),
   },
 }
 
@@ -59,5 +53,4 @@ export const DEFAULT_STAT_ICON = {
   icon: FileText,
   iconColor: "text-muted-foreground",
   iconBg: "bg-muted/10",
-  formatValue: (val: string | number) => String(val),
 }

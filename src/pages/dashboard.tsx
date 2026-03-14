@@ -1,14 +1,18 @@
 import { WelcomeHeader, StatsPanel, AttemptsList } from "@/features/dashboard"
 import { Separator } from "@/components/ui/separator"
-import { MOCK_SERVER_DATA, RECENT_ATTEMPTS } from "@/features/dashboard/mock-data"
+import { useDashboardStats, useAttemptsList, useUserInfo } from "@/features/dashboard/"
 
 export function DashboardPage() {
+  const { items: stats } = useDashboardStats()
+  const { items: attempts } = useAttemptsList()
+  const { items: userInfo } = useUserInfo()
+
   return (
     <div className="flex flex-col gap-8">
-      <WelcomeHeader firstName="John" lastName="Doe" />
-      <StatsPanel stats={MOCK_SERVER_DATA} />
+      <WelcomeHeader {...userInfo} />
+      <StatsPanel stats={stats} />
       <Separator />
-      <AttemptsList attempts={RECENT_ATTEMPTS} />
+      <AttemptsList attempts={attempts} />
     </div>
   )
 }
