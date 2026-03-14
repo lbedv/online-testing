@@ -1,25 +1,17 @@
-export interface DashboardStatDTO {
-  statKey: string
-  value: number | string
+import type { DashboardStatsDTO, AttemptDTO, UserProfileDTO } from "@/shared/types/dto"
+
+export const PROFILE_INFO: UserProfileDTO = {
+  firstName: "John",
+  lastName: "Doe",
+  email: "john.doe@example.com",
+  registeredAt: "2024-03-05T09:30:00Z",
 }
 
-export const MOCK_SERVER_DATA: DashboardStatDTO[] = [
-  { statKey: "total-tests-taken", value: 24 },
-  { statKey: "average-score", value: 78 },
-  { statKey: "tests-created", value: 8 },
-  { statKey: "recent-activity", value: "2026-03-12T10:15:00Z" },
-]
-
-export interface AttemptDTO {
-  id: string
-  testId: string
-  testTitle: string
-  testCategory: string
-  score: number
-  totalPoints: number
-  timeTakenSeconds: number
-  completedAt: string
-  passed: boolean
+export const DASHBOARD_STATS: DashboardStatsDTO = {
+  totalTestsTaken: 24,
+  averageScore: 78,
+  testsCreated: 8,
+  recentActivity: "2026-03-12T10:15:00Z"
 }
 
 export const RECENT_ATTEMPTS: AttemptDTO[] = [

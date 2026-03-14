@@ -3,7 +3,7 @@ import { STAT_ICON_MAP, DEFAULT_STAT_ICON} from "../constants"
 
 interface StatItem {
   statKey: string
-  value: number | string
+  value: string
 }
 
 interface StatsPanelProps {
@@ -17,11 +17,9 @@ export function StatsPanel({ stats }: StatsPanelProps) {
 
   const items = stats.map((s) => {
     const iconCfg = STAT_ICON_MAP[s.statKey] ?? DEFAULT_STAT_ICON
-    const { formatValue, ...restOfConfig } = iconCfg
     return {
-      statKey: s.statKey,
-      value: formatValue(s.value),
-        ...restOfConfig,
+        ...s,
+        ...iconCfg,
     }
   })
 
