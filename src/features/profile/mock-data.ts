@@ -1,11 +1,6 @@
-interface UserProfileDTO {
-  firstName: string
-  lastName: string
-  email: string
-  registeredAt: string
-}
+import type { UserProfileDTO } from "@/shared/types/dto"
 
-export const user: UserProfileDTO = {
+export const PROFILE_INFO: UserProfileDTO = {
   firstName: "John",
   lastName: "Doe",
   email: "john.doe@example.com",
