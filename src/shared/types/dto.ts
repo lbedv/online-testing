@@ -1,9 +1,8 @@
-export interface UserBasicInfoDTO {
+import type { Category, Difficulty, TestOwnership } from "./test";
+
+export interface UserProfileDTO {
   firstName: string;
   lastName: string;
-}
-
-export interface UserProfileDTO extends UserBasicInfoDTO {
   email: string;
   registeredAt: string;
 }
@@ -25,4 +24,20 @@ export interface AttemptDTO {
   timeTakenSeconds: number
   completedAt: string
   passed: boolean
+}
+
+export interface CatalogTestDto {
+  id: string;
+  title: string;
+  description: string;
+  category: Category;
+  difficulty: Difficulty;
+  questionsCount: number
+  attemptsCount: number
+  author: {
+    firstName: string;
+    lastName: string;
+  };
+  ownership: TestOwnership; 
+  createdAt: string;
 }
