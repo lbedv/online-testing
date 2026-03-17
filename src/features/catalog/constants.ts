@@ -29,3 +29,9 @@ export const SORT_OPTIONS: SelectOption<SortOption>[] = [
   { value: "oldest", label: "Oldest" },
   { value: "attempts", label: "Attempts" },
 ];
+
+export const DIFFICULTY_BADGE_STYLES: Record<Difficulty, { label: string, style: string} > = {
+  easy: { label: "Easy", style: "border-transparent bg-success/15 text-success hover:bg-success/20" },
+  medium: { label: "Medium", style: "border-transparent bg-warning/15 text-warning hover:bg-warning/20" },
+  hard: { label: "Hard", style: "border-transparent bg-destructive/15 text-destructive hover:bg-destructive/20" },
+}
