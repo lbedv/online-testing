@@ -1,9 +1,13 @@
-import { Pagination } from "@/components/common"
+import { PageHeader, Pagination } from "@/components/common"
+import { Button } from "@/components/ui/button"
 import {
   CatalogToolbar,
   CatalogCard,
   useCatalogFilters,
 } from "@/features/catalog"
+import PathConstants from "@/routes/path-constants"
+import { PlusCircle } from "lucide-react"
+import { Link } from "@tanstack/react-router"
 
 export function CatalogPage() {
   const {
@@ -19,6 +23,17 @@ export function CatalogPage() {
 
   return (
     <div className="flex flex-col gap-6">
+      <PageHeader
+        title="Browse Tests"
+        description="Explore your tests or discover public tests from the community."
+      >
+        <Button asChild size="sm">
+          <Link to={PathConstants.MY_TESTS}>
+            <PlusCircle className="mr-2 h-4 w-4" />
+            Create Test
+          </Link>
+        </Button>
+      </PageHeader>
       <CatalogToolbar
         filterParams={filters}
         resultCount={resultCount}
