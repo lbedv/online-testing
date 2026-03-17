@@ -9,9 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Clock, RotateCcw, ArrowRight } from "lucide-react"
 import { IconStat } from "@/components/common"
-import { ScoreBadge } from "./score-badge"
 import type { AttemptItem } from "../types"
 
 interface AttemptCardProps {
@@ -32,7 +32,9 @@ export function AttemptCard( { attempt }: AttemptCardProps ) {
           <CardTitle className="text-base font-semibold leading-snug">
             {attempt.testTitle}
           </CardTitle>
-          <ScoreBadge percentage={attempt.percentage} passed={attempt.passed} />
+          <Badge variant={attempt.passed ? "success" : "destructive"}>
+            {attempt.percentage}% Passed
+          </Badge>
         </div>
         <CardDescription className="text-sm leading-relaxed">
           {attempt.testCategory}

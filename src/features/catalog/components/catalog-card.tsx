@@ -8,10 +8,11 @@ import {
 } from "@/components/ui/card"
 import { Link } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { HelpCircle, User, Users } from "lucide-react"
 import { IconStat } from "@/components/common"
 import type { CatalogTest } from "../types"
-import { DifficultyBadge } from "./difficulty-badge"
+import { DIFFICULTY_CONFIG } from "../constants"
 
 interface CatalogCardProps {
   test: CatalogTest
@@ -24,6 +25,7 @@ interface CatalogCardProps {
  */
 export function CatalogCard({ test }: CatalogCardProps) {
   const isOwner = test.ownership === "mine"
+  const badgeConfig = DIFFICULTY_CONFIG[test.difficulty]
 
   return (
     <Card className="flex flex-col transition-shadow hover:shadow-md">
@@ -41,7 +43,9 @@ export function CatalogCard({ test }: CatalogCardProps) {
             )}
           </div>
           <div className="flex shrink-0 items-center gap-1.5">
-            <DifficultyBadge difficulty={test.difficulty} />
+            <Badge variant={badgeConfig.variant}>
+              {badgeConfig.label}
+            </Badge>
           </div>
         </div>
         <CardDescription className="line-clamp-2 text-sm leading-relaxed">
