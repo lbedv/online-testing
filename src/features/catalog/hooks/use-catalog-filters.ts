@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ITEMS_PER_PAGE } from "../constants"
+import { ITEMS_PER_PAGE, OPTION_ALL } from "../constants"
 import type { CatalogFilterParams } from "../types"
 import { useCatalogTests } from "./use-catalog-tests"
 import { usePagination } from "@/shared/hooks/use-pagination"
@@ -26,16 +26,16 @@ export function useCatalogFilters() {
     setCurrentPage(1)
   }
 
-  const handleFilterChange = <K extends keyof CatalogFilterParams>(
-      key: K, 
-      value: CatalogFilterParams[K]
-    ) => {
+  const handleFilterChange = (
+    key: keyof CatalogFilterParams,
+    value: string
+  ) => {
     setFilters((prev) => ({
       ...prev,
-      [key]: value,
+      [key]: value === OPTION_ALL ? undefined : value,
     }));
     resetPageToStart()
-  }
+  };
 
   function clearFilters() {
     setFilters((prev) => ({
