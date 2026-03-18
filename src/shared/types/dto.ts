@@ -1,5 +1,6 @@
 import type { Category, Difficulty, TestOwnership } from "./test";
 
+// User profile DTO
 export interface UserProfileDTO {
   firstName: string;
   lastName: string;
@@ -7,6 +8,7 @@ export interface UserProfileDTO {
   registeredAt: string;
 }
 
+// Dashboard statistics DTO
 export interface DashboardStatsDTO {
   totalTestsTaken: number
   averageScore: number
@@ -14,18 +16,21 @@ export interface DashboardStatsDTO {
   recentActivity: string
 }
 
-export interface AttemptDTO {
+// Attempt DTO for listing user's attempts on the dashboard
+export interface DashboardAttemptDTO {
   id: string
   testId: string
   testTitle: string
-  testCategory: string
-  score: number
+  testCategory: Category
+  pointsEarned: number
   totalPoints: number
+  percentage: number
   timeTakenSeconds: number
   completedAt: string
-  passed: boolean
+  isPassed: boolean
 }
 
+// Catalog test DTO for listing tests in the catalog
 export interface CatalogTestDto {
   id: string;
   title: string;
