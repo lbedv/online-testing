@@ -4,15 +4,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import type { LucideIcon } from "lucide-react"
+import { FileText, type LucideIcon } from "lucide-react"
+import { cn } from "@/shared/lib/utils"
 
 interface StatCardProps {
   title: string
   description: string
   value: string
-  icon: LucideIcon
-  iconColor: string
-  iconBg: string
+  icon?: LucideIcon
+  iconColor?: string
+  iconBg?: string
 }
 
 /**
@@ -20,22 +21,21 @@ interface StatCardProps {
  * Shows a numeric value with description text and an icon in a colored background.
  */
 export function StatCard({
-    title,
-    description,
-    value,
-    icon,
-    iconColor,
-    iconBg
+  title,
+  description,
+  value,
+  icon: Icon = FileText,
+  iconColor = "text-muted-foreground",
+  iconBg = "bg-muted/10"
 }: StatCardProps) {
-  const Icon = icon
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
           {title}
         </CardTitle>
-        <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${iconBg}`}>
-          <Icon className={`h-4 w-4 ${iconColor}`} />
+        <div className={cn("flex h-8 w-8 items-center justify-center rounded-lg", iconBg)}>
+          <Icon className={cn("h-4 w-4", iconColor)} />
         </div>
       </CardHeader>
       <CardContent>

@@ -12,3 +12,10 @@ export interface AttemptItem {
   completedAt: string
   isPassed: boolean
 }
+
+export interface DashboardStats {
+  totalTestsTaken: number
+  averageScore: number
+  testsCreated: number
+  recentActivity: string
+}
