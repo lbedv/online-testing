@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Clock, RotateCcw, ArrowRight } from "lucide-react"
 import { IconStat } from "@/components/common"
-import { ScoreBadge } from "./score-badge"
+import { formatRelativeTime, formatDuration } from "@/shared/lib/date";
 import type { AttemptItem } from "../types"
 
 interface AttemptCardProps {
@@ -32,7 +33,9 @@ export function AttemptCard( { attempt }: AttemptCardProps ) {
           <CardTitle className="text-base font-semibold leading-snug">
             {attempt.testTitle}
           </CardTitle>
-          <ScoreBadge percentage={attempt.percentage} passed={attempt.passed} />
+          <Badge variant={attempt.isPassed ? "success" : "destructive"}>
+            {attempt.percentage}% Passed
+          </Badge>
         </div>
         <CardDescription className="text-sm leading-relaxed">
           {attempt.testCategory}
@@ -44,13 +47,13 @@ export function AttemptCard( { attempt }: AttemptCardProps ) {
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Score</span>
           <span className="font-semibold text-foreground">
-            {attempt.score}/{attempt.totalPoints}
+            {attempt.pointsEarned}/{attempt.totalPoints}
           </span>
         </div>
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
           <div
             className={`h-full rounded-full transition-all ${
-              attempt.passed ? "bg-success" : "bg-destructive"
+              attempt.isPassed ? "bg-success" : "bg-destructive"
             }`}
             style={{ width: `${attempt.percentage}%` }}
           />
@@ -59,10 +62,10 @@ export function AttemptCard( { attempt }: AttemptCardProps ) {
         <div className="mt-1 flex justify-between items-center gap-4">
           <IconStat
             icon={<Clock className="h-3.5 w-3.5" />}
-            value={attempt.timeTaken}
+            value={formatDuration(attempt.timeTakenSeconds)}
           />
           <span className="text-xs text-muted-foreground">
-            {attempt.completedAt}
+            {formatRelativeTime(attempt.completedAt)}
           </span>
         </div>
       </CardContent>

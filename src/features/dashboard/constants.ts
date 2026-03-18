@@ -46,11 +46,3 @@ export const STAT_ICON_MAP: Record<
     iconBg: "bg-warning/10",
   },
 }
-
-/** Fallback icon config for unknown stat keys */
-export const DEFAULT_STAT_ICON = {
-  title : "",
-  icon: FileText,
-  iconColor: "text-muted-foreground",
-  iconBg: "bg-muted/10",
-}

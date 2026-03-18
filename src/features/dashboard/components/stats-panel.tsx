@@ -1,32 +1,33 @@
 import { StatCard } from "./stat-card"
-import { STAT_ICON_MAP, DEFAULT_STAT_ICON} from "../constants"
-
-interface StatItem {
-  statKey: string
-  value: string
-}
+import { STAT_ICON_MAP } from "../constants"
+import type { DashboardStats } from "../types"
+import { formatRelativeTime } from "@/shared/lib/date"
 
 interface StatsPanelProps {
-  stats: StatItem[]
+  stats: DashboardStats
 }
+
+const STAT_ITEMS = [
+  { key: "totalTestsTaken", format: (s: DashboardStats) => String(s.totalTestsTaken) },
+  { key: "averageScore",    format: (s: DashboardStats) => `${s.averageScore}%` },
+  { key: "testsCreated",    format: (s: DashboardStats) => String(s.testsCreated) },
+  { key: "recentActivity",  format: (s: DashboardStats) => formatRelativeTime(s.recentActivity) },
+] as const;
+
 /**
  * StatsPanel component - Renders a grid of dashboard statistics with loading and error states.
  * Maps stat data from the hook to StatCard components with appropriate icons from STAT_ICON_MAP.
  */
 export function StatsPanel({ stats }: StatsPanelProps) {
 
-  const items = stats.map((s) => {
-    const iconCfg = STAT_ICON_MAP[s.statKey] ?? DEFAULT_STAT_ICON
-    return {
-        ...s,
-        ...iconCfg,
-    }
-  })
-
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      {items.map((stat) => (
-        <StatCard key={stat.statKey} {...stat} />
+      {STAT_ITEMS.map((item) => (
+        <StatCard
+          key={item.key}
+          value={item.format(stats)}
+          {...STAT_ICON_MAP[item.key]}
+        />
       ))}
     </div>
   )
