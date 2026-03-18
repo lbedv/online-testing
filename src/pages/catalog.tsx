@@ -4,6 +4,7 @@ import {
   CatalogToolbar,
   CatalogCard,
   useCatalogFilters,
+  CatalogEmpty,
 } from "@/features/catalog"
 import PathConstants from "@/routes/path-constants"
 import { PlusCircle } from "lucide-react"
@@ -41,11 +42,15 @@ export function CatalogPage() {
         clearFilters={clearFilters}
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {paginatedItems.map((test) => (
-          <CatalogCard key={test.id} test={test} />
-        ))}
-      </div>
+        {paginatedItems.length === 0 ? (
+          <CatalogEmpty />
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {paginatedItems.map((test) => (
+              <CatalogCard key={test.id} test={test} />
+            ))}
+          </div>
+        )}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
