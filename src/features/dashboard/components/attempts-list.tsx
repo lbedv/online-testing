@@ -6,6 +6,7 @@ import { AttemptCard } from "./attempt-card"
 import { usePagination } from "@/shared/hooks/use-pagination"
 import { ITEMS_PER_PAGE } from "../constants"
 import type { AttemptItem } from "../types"
+import { DashboardEmpty } from "./dashboard-empty"
 
 interface AttemptsListProps{
   attempts: AttemptItem[]
@@ -27,11 +28,15 @@ export function AttemptsList({ attempts }: AttemptsListProps) {
          </Button>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {paginatedItems.map((item) => (
-          <AttemptCard key={item.id} attempt={item} />
-        ))}
-      </div>
+        {paginatedItems.length === 0 ? (
+          <DashboardEmpty />
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {paginatedItems.map((item) => (
+              <AttemptCard key={item.id} attempt={item} />
+            ))}
+          </div>
+        )}
 
       <div className="mt-4">
         <Pagination 
