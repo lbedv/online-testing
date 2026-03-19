@@ -1,1 +1,15 @@
-export const TestResultsPage = () => <div><h1>Test Results</h1></div>;
+import {
+  ResultsHeader,
+  useTestResults,
+} from "@/features/test-results"
+
+export function TestResultsPage() {
+  const { items } = useTestResults()
+
+
+  return (
+    <div className="min-h-screen bg-background">
+      <ResultsHeader testTitle={items.testTitle} />
+    </div>
+  )
+}
