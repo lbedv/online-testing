@@ -26,12 +26,10 @@ export function formatAnswers(variant: AnswerResultView, isSkipped: boolean) {
       };
     case "multipleChoice": {
       const getLabelsForIds = (ids: string[]) => {
-        return ids
-          .map(id => {
-            const option = variant.options.find(opt => opt.id === id);
-            return option ? option.label : id; 
-          })
-          .join(", ");
+        return ids.map(id => {
+          const option = variant.options.find(opt => opt.id === id);
+          return option ? option.label : id; 
+        });
       };
       return {
         userText: isSkipped ? noAnswerText : getLabelsForIds(variant.userAnswer!),

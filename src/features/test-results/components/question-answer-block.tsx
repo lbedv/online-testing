@@ -31,7 +31,7 @@ export function AnswerDisplay({
   answerOutcome = "correct", 
   isUserAnswer = false
 }: { 
-  answer: string
+  answer: string | string[]
   answerOutcome?: AnswerOutcome
   isUserAnswer?: boolean
 }) {
@@ -49,7 +49,21 @@ export function AnswerDisplay({
           ANSWER_STYLES_MAP[visualState]
         )}
       >
-        {answer}
+        {Array.isArray(answer) ? (
+          <div className="flex flex-wrap gap-1.5">
+            {answer.map((item, index) => (
+              <span 
+                key={index} 
+                className="inline-flex items-center rounded-md bg-background/60 px-2 py-0.5 text-xs font-medium border shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="font-medium leading-relaxed wrap-break-word">
+            {answer}</span>
+        )}
       </div>
     </div>
   )
