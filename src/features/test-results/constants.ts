@@ -1,4 +1,5 @@
-import type { ScoreStatus } from "./types";
+import type { ScoreStatus, AnswerOutcome } from "./types";
+import type { SelectOption } from "@/shared/types/common";
 
 export const SCORE_STYLE_MAP: Record<ScoreStatus, {
   wrapper: string;
@@ -29,3 +30,9 @@ export const SCORE_STYLE_MAP: Record<ScoreStatus, {
     label: "Needs Improvement",
   },
 } as const;
+
+export const FILTER_OPTIONS: SelectOption<AnswerOutcome>[] = [
+  { label: "Correct", value: "correct" },
+  { label: "Incorrect", value: "incorrect" },
+  { label: "Skipped", value: "skipped" }
+] as const;

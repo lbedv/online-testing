@@ -1,5 +1,6 @@
 import {
   ScoreCard,
+  ResultsPanel,
   ResultsHeader,
   useTestResults,
 } from "@/features/test-results"
@@ -15,6 +16,9 @@ export function TestResultsPage() {
         <div className="flex flex-col gap-8">
           <section aria-label="Score summary">
             <ScoreCard result={items} />
+          </section>
+          <section aria-label="Question breakdown">
+            <ResultsPanel questions={items.questions} />
           </section>
         </div>
       </main>
