@@ -3,6 +3,7 @@ import { Accordion } from "@/components/ui/accordion"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { ListChecks } from "lucide-react"
 import type { AnswerOutcome, QuestionResult } from "../types"
+import { QuestionBreakdown } from "./question-breakdown"
 import { useQuestionsFilter } from "../hooks/use-questions-filter"
 import { FILTER_OPTIONS } from "../constants"
 
@@ -43,7 +44,11 @@ export function ResultsPanel({ questions }: ResultsPanelProps) {
       <CardContent className="flex flex-col gap-0 px-0 pb-0">
         <Accordion key={filter ?? ""} type="multiple" className="w-full">
           {filtered.map((q) => (
-            q.answerOutcome
+            <QuestionBreakdown
+              key={q.questionNumber}
+              question={q}
+              value={`q-${q.questionNumber}`}
+            />
           ))}
         </Accordion>
       </CardContent>

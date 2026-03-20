@@ -1,5 +1,7 @@
 import type { ScoreStatus, AnswerOutcome } from "./types";
+import type { QuestionType } from "@/shared/types/answer";
 import type { SelectOption } from "@/shared/types/common";
+import { CheckCircle2, XCircle, MinusCircle } from "lucide-react";
 
 export const SCORE_STYLE_MAP: Record<ScoreStatus, {
   wrapper: string;
@@ -29,6 +31,41 @@ export const SCORE_STYLE_MAP: Record<ScoreStatus, {
     stroke: "stroke-destructive",
     label: "Needs Improvement",
   },
+} as const;
+
+export const ANSWER_ICON_MAP: Record<AnswerOutcome, { 
+  label: string;
+  icon: typeof CheckCircle2;
+  color: string;
+}> = {
+  "skipped": {
+    label: "Skipped",
+    icon: MinusCircle,
+    color: "text-warning",
+  },
+  "correct": {
+    label: "Correct",
+    icon: CheckCircle2,
+    color: "text-success",
+  },
+  "incorrect": {
+    label: "Incorrect",
+    icon: XCircle,
+    color: "text-destructive",
+  },
+} as const
+
+export const ANSWER_STYLES_MAP: Record<AnswerOutcome, string> = {
+  correct: "border-success/30 bg-success/5 text-success",
+  incorrect: "border-destructive/30 bg-destructive/5 text-destructive",
+  skipped: "border-warning/30 bg-warning/5 text-warning italic opacity-80",
+} as const;
+
+export const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
+  multipleChoice: "Multiple Choice",
+  trueFalse: "True / False",
+  textInput: "Text Input",
+  numeric: "Numeric",
 } as const;
 
 export const FILTER_OPTIONS: SelectOption<AnswerOutcome>[] = [
