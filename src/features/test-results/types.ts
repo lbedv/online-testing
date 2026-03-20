@@ -1,4 +1,4 @@
-import type { AnswerResult } from "@/shared/types/answer";
+import type { AnswerResultView } from "@/shared/types/answer";
 
 export type ScoreStatus = "excellent" | "passed" | "failed"
 
@@ -11,7 +11,7 @@ export interface QuestionResult {
   answerOutcome: AnswerOutcome;
   pointsEarned: number;
   pointsPossible: number;
-  answer: AnswerResult
+  answer: AnswerResultView
 }
 
 /**

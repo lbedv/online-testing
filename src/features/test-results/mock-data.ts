@@ -52,8 +52,14 @@ export const MOCK_TEST_RESULT: TestResult = {
       pointsPossible: 15,
       answer: {
         questionType: "multipleChoice",
-        userAnswer: ["let", "const"],
-        correctAnswer: ["let", "const"],
+        options: [
+          { id: "opt_1", label: "let" },
+          { id: "opt_2", label: "const" },
+          { id: "opt_3", label: "var" },
+          { id: "opt_4", label: "function" }
+        ],
+        userAnswer: ["opt_1", "opt_2"],
+        correctAnswer: ["opt_1", "opt_2"],
       },
     },
     {
