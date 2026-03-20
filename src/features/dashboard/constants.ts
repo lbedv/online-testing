@@ -17,28 +17,28 @@ export const STAT_ICON_MAP: Record<
     iconBg: string;
   }
 > = {
-  "total-tests-taken": {
+  "totalTestsTaken": {
     title: "Total Tests Taken",
     description: 'All time completed tests',
     icon: FileText,
     iconColor: "text-primary",
     iconBg: "bg-primary/10",
   },
-  "average-score": {
+  "averageScore": {
     title: "Average Score",
     description: 'Across all users',
     icon: TrendingUp,
     iconColor: "text-success",
     iconBg: "bg-success/10",
   },
-  "tests-created": {
+  "testsCreated": {
     title: "Tests Created",
     description: 'Total tests created by you',
     icon: Award,
     iconColor: "text-secondary",
     iconBg: "bg-secondary/10",
   },
-  "recent-activity": {
+  "recentActivity": {
     title: "Recent Activity",
     description: 'Last test taken',
     icon: Clock,
