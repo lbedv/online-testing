@@ -4,7 +4,7 @@ interface NavItemProps {
   icon: React.ReactNode
   label: string
   isActive: boolean
-  onClick: () => void
+  onClick?: () => void
 }
 
 export function NavItem({
