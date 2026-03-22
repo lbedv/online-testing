@@ -67,7 +67,7 @@ export function CatalogCard({ test }: CatalogCardProps) {
           />
           <IconStat
             icon={<Clock className="h-3.5 w-3.5" />}
-            value={formatDuration(test.timeLimitSeconds)}
+            value={formatDuration(test.timeLimitSeconds, true)}
           />
         </div>
 

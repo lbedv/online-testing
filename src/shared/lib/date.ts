@@ -9,9 +9,19 @@ export function formatDate(isoString: string): string {
   }).format(date);
 }
 
-export function formatDuration(totalSeconds: number): string {
+export function formatDuration(
+  totalSeconds: number,
+  clockFormat: boolean = false
+): string {
   const minutes = Math.floor(totalSeconds / 60)
   const seconds = totalSeconds % 60
+  
+  if (clockFormat) {
+    const paddedMinutes = String(minutes).padStart(2, '0')
+    const paddedSeconds = String(seconds).padStart(2, '0')
+    return `${paddedMinutes}:${paddedSeconds}`
+  }
+
   return `${minutes}m ${seconds}s`
 }
 
