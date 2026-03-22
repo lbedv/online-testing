@@ -6,11 +6,12 @@ import {
 } from "@/components/ui/accordion"
 import { QuestionAnswerBlock } from "./question-answer-block"
 import { cn } from "@/shared/lib/utils"
-import { QUESTION_TYPE_LABELS, ANSWER_ICON_MAP } from "../constants"
-import type { QuestionResult } from "../types"
+import { QUESTION_TYPE_LABELS } from "@/shared/types/answer"
+import { ANSWER_ICON_MAP } from "../constants"
+import type { QuestionResultView } from "../types"
 
 interface QuestionBreakdownProps {
-  question: QuestionResult
+  question: QuestionResultView
   value: string
 }
 

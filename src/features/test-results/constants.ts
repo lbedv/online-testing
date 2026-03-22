@@ -1,5 +1,4 @@
 import type { ScoreStatus, AnswerOutcome } from "./types";
-import type { QuestionType } from "@/shared/types/answer";
 import type { SelectOption } from "@/shared/types/common";
 import { CheckCircle2, XCircle, MinusCircle } from "lucide-react";
 
@@ -59,13 +58,6 @@ export const ANSWER_STYLES_MAP: Record<AnswerOutcome, string> = {
   correct: "border-success/30 bg-success/5 text-success",
   incorrect: "border-destructive/30 bg-destructive/5 text-destructive",
   skipped: "border-warning/30 bg-warning/5 text-warning italic opacity-80",
-} as const;
-
-export const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
-  multipleChoice: "Multiple Choice",
-  trueFalse: "True / False",
-  textInput: "Text Input",
-  numeric: "Numeric",
 } as const;
 
 export const FILTER_OPTIONS: SelectOption<AnswerOutcome>[] = [

@@ -7,6 +7,7 @@ import { formatDuration } from "@/shared/lib/date"
 import { SCORE_STYLE_MAP } from "../constants"
 import type { TestResult, ScoreStatus } from "../types"
 import { countAnswerOutcomes } from "../utils/answer-utils"
+import { CATEGORY_LABELS, DIFFICULTY_LABELS } from '@/shared/types/test';
 
 interface ScoreCardProps {
   result: TestResult
@@ -90,10 +91,10 @@ export function ScoreCard({ result }: ScoreCardProps) {
           {/* Test metadata info */}
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline" className="text-xs text-muted-foreground border-border bg-muted/30">
-              {testCategory}
+              {CATEGORY_LABELS[testCategory]}
             </Badge>
             <Badge variant="outline" className="text-xs text-muted-foreground border-border bg-muted/30">
-              {testDifficulty}
+              {DIFFICULTY_LABELS[testDifficulty]}
             </Badge>
             <Badge variant="outline" className="text-xs text-muted-foreground border-border bg-muted/30">
               {questions.length} questions

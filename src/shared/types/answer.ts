@@ -1,3 +1,4 @@
+// TODO (Backend Refactor): Move consts to a separate file, types to shared zod schemas
 export type AnswerMap = {
   numeric: number;
   trueFalse: boolean;
@@ -43,3 +44,10 @@ export type AnswerSubmitView = {
 export type AnswerResultView = {
   [K in QuestionType]: WithCorrect<K> & WithUserAnswer<K> & WithOptions<K>;
 }[QuestionType];
+
+export const QUESTION_TYPE_LABELS = {
+  multipleChoice: "Multiple Choice",
+  trueFalse: "True / False",
+  textInput: "Text Input",
+  numeric: "Numeric",
+} satisfies Record<QuestionType, string>;

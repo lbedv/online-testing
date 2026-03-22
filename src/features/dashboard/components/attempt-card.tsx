@@ -14,6 +14,7 @@ import { Clock, RotateCcw, ArrowRight } from "lucide-react"
 import { IconStat } from "@/components/common"
 import { formatRelativeTime, formatDuration } from "@/shared/lib/date";
 import type { AttemptItem } from "../types"
+import { CATEGORY_LABELS } from "@/shared/types/test"
 
 interface AttemptCardProps {
   attempt: AttemptItem
@@ -34,11 +35,11 @@ export function AttemptCard( { attempt }: AttemptCardProps ) {
             {attempt.testTitle}
           </CardTitle>
           <Badge variant={attempt.isPassed ? "success" : "destructive"}>
-            {attempt.percentage}% Passed
+            {attempt.percentage}% {attempt.isPassed ? "Passed" : "Failed"}
           </Badge>
         </div>
         <CardDescription className="text-sm leading-relaxed">
-          {attempt.testCategory}
+          {CATEGORY_LABELS[attempt.testCategory]}
         </CardDescription>
       </CardHeader>
 

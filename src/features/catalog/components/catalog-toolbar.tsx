@@ -7,7 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { CATEGORY_OPTIONS, DIFFICULTY_OPTIONS, SORT_OPTIONS, OPTION_ALL } from "../constants"
+import { DIFFICULTY_OPTIONS, CATEGORY_OPTIONS } from "@/shared/types/test"
+import { SORT_OPTIONS, OPTION_ALL } from "../constants"
 import type { CatalogFilterParams } from "../types"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
