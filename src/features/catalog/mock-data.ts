@@ -1,153 +1,173 @@
 import type { CatalogTestDto } from "@/shared/types/dto";
 
-// Mock data for tests in the catalog
 export const CATALOG_TESTS: CatalogTestDto[] = [
   {
-    id: "pub-1",
-    title: "HTML5 Semantic Elements",
-    description:
-      "Test your understanding of semantic HTML5 elements and their proper usage in modern web development.",
-    category: "web-development",
+    id: "test_001",
+    title: "World Capitals – Quick Fire",
+    description: "Basic geography quiz covering capital cities of 50+ countries. Great warm-up for geography lovers.",
+    category: "geography",
     difficulty: "easy",
-    questionsCount: 15,
-    attemptsCount: 312,
+    questionsCount: 50,
+    attemptsCount: 12470,
+    timeLimitSeconds: 600,
     author: {
-        firstName: "Sarah",
-        lastName: "Chen"
+      firstName: "Elena",
+      lastName: "Martinez",
     },
     ownership: "public",
-    createdAt: "2026-01-10T12:00:00Z",
+    createdAt: "2024-11-12T14:30:00Z",
   },
+
   {
-    id: "pub-2",
-    title: "Advanced React Hooks",
-    description:
-      "Deep dive into useReducer, useMemo, useCallback, and custom hooks. For experienced React developers.",
-    category: "react",
-    difficulty: "hard",
-    questionsCount: 20,
-    attemptsCount: 198,
-    author: {
-        firstName: "Mike",
-        lastName: "Torres"
-    },
-    ownership: "public",
-    createdAt: "2026-02-15T15:30:00Z",
-  },
-  {
-    id: "pub-3",
-    title: "Git & Version Control",
-    description:
-      "Branching strategies, merge conflicts, rebasing, and collaborative workflows using Git.",
-    category: "devops",
+    id: "test_002",
+    title: "JavaScript & TypeScript Core Concepts",
+    description: "Covers closures, prototypes, async/await, generics, utility types, type guards, discriminated unions and more.",
+    category: "programming",
     difficulty: "medium",
-    questionsCount: 18,
-    attemptsCount: 456,
+    questionsCount: 38,
+    attemptsCount: 3842,
+    timeLimitSeconds: 1200,
     author: {
-        firstName: "Alex",
-        lastName: "Rivera"
+      firstName: "Alex",
+      lastName: "Chen",
     },
     ownership: "public",
-    createdAt: "2026-01-20T09:00:00Z",
+    createdAt: "2025-02-08T09:15:00Z",
   },
+
   {
-    id: "pub-4",
-    title: "CSS Animations & Transitions",
-    description:
-      "Keyframes, transforms, transition timing, and performance considerations for smooth CSS animations.",
-    category: "css",
-    difficulty: "medium",
-    questionsCount: 16,
-    attemptsCount: 87,
-    author: {
-        firstName: "Jordan",
-        lastName: "Lee"
-    },
-    ownership: "public",
-    createdAt: "2026-02-20T14:00:00Z",
-  },
-  {
-    id: "pub-5",
-    title: "JavaScript ES6+ Features",
-    description:
-      "Arrow functions, destructuring, modules, generators, symbols, and other modern JavaScript features.",
-    category: "javascript",
-    difficulty: "easy",
-    questionsCount: 24,
-    attemptsCount: 521,
-    author: {
-        firstName: "Priya",
-        lastName: "Patel"
-    },
-    ownership: "public",
-    createdAt: "2026-01-25T11:30:00Z",
-  },
-  {
-    id: "pub-6",
-    title: "Docker Fundamentals",
-    description:
-      "Containers, images, Dockerfiles, networking, and compose for local development environments.",
-    category: "devops",
-    difficulty: "medium",
-    questionsCount: 20,
-    attemptsCount: 234,
-    author: {
-        firstName: "Chris",
-        lastName: "Wu"
-    },
-    ownership: "public",
-    createdAt: "2026-02-28T10:00:00Z",
-  },
-  {
-    id: "mine-1",
-    title: "TypeScript Advanced Types",
-    description:
-      "Generics, conditional types, mapped types, infer, utility types, and template literal types.",
-    category: "typescript",
+    id: "test_003",
+    title: "My Custom React + Zustand Interview Prep",
+    description: "Questions I collected while preparing for senior frontend interviews in 2025",
+    category: "programming",
     difficulty: "hard",
     questionsCount: 22,
-    attemptsCount: 18,
-    author: { firstName: "You", lastName: "" },
+    attemptsCount: 17,
+    timeLimitSeconds: 900,
+    author: {
+      firstName: "Sophie",
+      lastName: "Kowalski",
+    },
     ownership: "mine",
-    createdAt: "2026-03-05T18:45:00Z",
+    createdAt: "2026-03-10T18:42:00Z",
   },
+
   {
-    id: "mine-2",
-    title: "React Query & TanStack Query Basics",
-    description:
-      "Queries, mutations, invalidation, optimistic updates, pagination, and error handling.",
-    category: "react",
+    id: "test_004",
+    title: "Organic Chemistry – Functional Groups & Reactions",
+    description: "Focuses on nomenclature, reaction mechanisms, stereochemistry and common named reactions.",
+    category: "chemistry",
+    difficulty: "hard",
+    questionsCount: 45,
+    attemptsCount: 2891,
+    timeLimitSeconds: 1500,
+    author: {
+      firstName: "Dr. James",
+      lastName: "Patel",
+    },
+    ownership: "public",
+    createdAt: "2024-06-30T11:20:00Z",
+  },
+
+  {
+    id: "test_005",
+    title: "Medical School – Year 1 Anatomy Recall",
+    description: "Basic gross anatomy, neuroanatomy and embryology questions for first-year medical students.",
+    category: "medicine",
     difficulty: "medium",
-    questionsCount: 16,
-    attemptsCount: 24,
-    author: { firstName: "You", lastName: "" },
-    ownership: "mine",
-    createdAt: "2026-02-10T09:15:00Z",
+    questionsCount: 80,
+    attemptsCount: 634,
+    timeLimitSeconds: 1800,
+    author: {
+      firstName: "Maya",
+      lastName: "Rodriguez",
+    },
+    ownership: "public",
+    createdAt: "2025-09-05T07:45:00Z",
   },
+
   {
-    id: "mine-3",
-    title: "Tailwind CSS Best Practices",
-    description:
-      "Utility-first mindset, component composition, custom themes, responsive design, and performance tips.",
-    category: "css",
+    id: "test_006",
+    title: "1980s & 1990s Music Trivia",
+    description: "From MTV golden era to grunge, boy bands and early hip-hop. How well do you remember?",
+    category: "music",
     difficulty: "easy",
-    questionsCount: 14,
-    attemptsCount: 41,
-    author: { firstName: "You", lastName: "" },
-    ownership: "mine",
-    createdAt: "2026-03-01T14:20:00Z",
+    questionsCount: 60,
+    attemptsCount: 15780,
+    timeLimitSeconds: 900,
+    author: {
+      firstName: "Lucas",
+      lastName: "Becker",
+    },
+    ownership: "public",
+    createdAt: "2024-12-24T15:10:00Z",
   },
+
   {
-    id: "mine-4",
-    title: "JavaScript Performance Optimization",
-    description:
-      "Event delegation, throttling/debouncing, memory leaks, Big O in practice, and V8 engine quirks.",
-    category: "javascript",
-    difficulty: "medium",
-    questionsCount: 19,
-    attemptsCount: 15,
-    author: { firstName: "You", lastName: "" },
+    id: "test_007",
+    title: "LeetCode Top 150 – Blind 75 + Extras (2025 edition)",
+    description: "Curated selection of the most frequently asked medium/hard problems with updated patterns.",
+    category: "programming",
+    difficulty: "hard",
+    questionsCount: 92,
+    attemptsCount: 421,
+    timeLimitSeconds: 3600,
+    author: {
+      firstName: "Daniel",
+      lastName: "Kim",
+    },
     ownership: "mine",
-    createdAt: "2026-01-28T11:00:00Z",
-  }
-]
+    createdAt: "2026-03-18T22:05:00Z",
+  },
+
+  {
+    id: "test_008",
+    title: "Ancient Civilizations – Mesopotamia to Rome",
+    description: "Timeline, rulers, inventions, architecture and fall of major ancient civilizations.",
+    category: "history",
+    difficulty: "medium",
+    questionsCount: 55,
+    attemptsCount: 3921,
+    timeLimitSeconds: 1200,
+    author: {
+      firstName: "Prof. Aisha",
+      lastName: "Malik",
+    },
+    ownership: "public",
+    createdAt: "2025-01-17T10:55:00Z",
+  },
+
+  {
+    id: "test_009",
+    title: "SQL for Data Analysts – Window Functions & CTEs",
+    description: "Heavy focus on RANK/DENSE_RANK, LAG/LEAD, recursive CTEs, pivoting and complex joins.",
+    category: "data_science",
+    difficulty: "hard",
+    questionsCount: 28,
+    attemptsCount: 943,
+    timeLimitSeconds: 1800,
+    author: {
+      firstName: "Liam",
+      lastName: "Nguyen",
+    },
+    ownership: "public",
+    createdAt: "2025-11-03T13:25:00Z",
+  },
+
+  {
+    id: "test_010",
+    title: "Random Knowledge Battle – Mixed Bag #7",
+    description: "Completely random questions from physics, movies, biology, memes, geography and pop culture.",
+    category: "general_knowledge",
+    difficulty: "medium",
+    questionsCount: 100,
+    attemptsCount: 28764,
+    timeLimitSeconds: 2000,
+    author: {
+      firstName: "QuizMaster",
+      lastName: "42",
+    },
+    ownership: "public",
+    createdAt: "2026-02-14T08:00:00Z",
+  },
+];

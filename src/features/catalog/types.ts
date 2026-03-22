@@ -16,6 +16,7 @@ export interface CatalogTest {
   difficulty: Difficulty
   questionsCount: number
   attemptsCount: number               // How many users have attempted this test
+  timeLimitSeconds: number
   author: {
     firstName: string
     lastName: string

@@ -29,6 +29,7 @@ export interface TestResultView {
   totalPoints: number
   percentage: number
   timeTakenSeconds: number
+  timeLimitSeconds: number
   completedAt: string
   isPassed: boolean
   questions: QuestionResultView[]

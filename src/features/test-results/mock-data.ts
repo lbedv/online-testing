@@ -1,78 +1,192 @@
-import { type TestResult } from "./types"; // Adjust import as needed
+import type { TestResultView } from "./types";
 
-export const MOCK_TEST_RESULT: TestResult = {
-  resultId: "res_987654321",
-  testId: "test_intro_to_js",
-  testTitle: "JavaScript Fundamentals Quiz",
-  testCategory: "Programming",
-  testDifficulty: "Beginner",
-  
-  // Aggregated Stats
-  pointsEarned: 25,
-  totalPoints: 40,
-  percentage: 62.5,
-  timeTakenSeconds: 845,
+export const MOCK_TEST_RESULT: TestResultView = {
+  resultId: "result-001",
+  testId: "test-001",
+  testTitle: "Mixed Knowledge Test",
+  testCategory: "general_knowledge",
+  testDifficulty: "medium",
+  pointsEarned: 40,
+  totalPoints: 60,
+  percentage: 66.67,
+  timeLimitSeconds: 1800,
+  timeTakenSeconds: 720,
+  completedAt: "2026-03-23T10:00:00Z",
   isPassed: true,
-  completedAt: "2026-01-10T12:00:00Z",
-  
-  // Detailed Breakdown
   questions: [
     {
-      questionId: "q_001",
+      questionId: "q1",
+      questionText: "What is the capital of France?",
       questionNumber: 1,
-      questionText: "What is the result of 10 + 5?",
       answerOutcome: "correct",
-      pointsEarned: 10,
-      pointsPossible: 10,
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "textInput",
+        correctAnswer: "Paris",
+        userAnswer: "Paris"
+      }
+    },
+    {
+      questionId: "q2",
+      questionText: "2 + 2 = ?",
+      questionNumber: 2,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
       answer: {
         questionType: "numeric",
-        userAnswer: 15,
-        correctAnswer: 15,
-      },
+        correctAnswer: 4,
+        userAnswer: 4
+      }
     },
     {
-      questionId: "q_002",
-      questionNumber: 2,
-      questionText: "JavaScript is a statically typed language.",
-      answerOutcome: "incorrect",
-      pointsEarned: 0,
-      pointsPossible: 10,
+      questionId: "q3",
+      questionText: "The Earth is flat.",
+      questionNumber: 3,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
       answer: {
         questionType: "trueFalse",
-        userAnswer: true, // User guessed true
-        correctAnswer: false, // The real answer is false
-      },
+        correctAnswer: false,
+        userAnswer: false
+      }
     },
     {
-      questionId: "q_003",
-      questionNumber: 3,
-      questionText: "Which of the following are valid ways to declare a variable in ES6?",
-      answerOutcome: "correct",
-      pointsEarned: 15,
-      pointsPossible: 15,
+      questionId: "q4",
+      questionText: "Which of the following are programming languages?",
+      questionNumber: 4,
+      answerOutcome: "incorrect",
+      pointsEarned: 0,
+      pointsPossible: 5,
       answer: {
         questionType: "multipleChoice",
+        correctAnswer: ["a", "c"],
+        userAnswer: ["a", "b"],
         options: [
-          { id: "opt_1", label: "let" },
-          { id: "opt_2", label: "const" },
-          { id: "opt_3", label: "var" },
-          { id: "opt_4", label: "function" }
-        ],
-        userAnswer: ["opt_1", "opt_2"],
-        correctAnswer: ["opt_1", "opt_2"],
-      },
+          { id: "a", label: "Python" },
+          { id: "b", label: "HTML" },
+          { id: "c", label: "Java" },
+          { id: "d", label: "CSS" }
+        ]
+      }
     },
     {
-      questionId: "q_004",
-      questionNumber: 4,
-      questionText: "What function is used to print content to the console?",
+      questionId: "q5",
+      questionText: "What is the boiling point of water (°C)?",
+      questionNumber: 5,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "numeric",
+        correctAnswer: 100,
+        userAnswer: 100
+      }
+    },
+    {
+      questionId: "q6",
+      questionText: "Who wrote 'Romeo and Juliet'?",
+      questionNumber: 6,
+      answerOutcome: "incorrect",
+      pointsEarned: 0,
+      pointsPossible: 5,
+      answer: {
+        questionType: "textInput",
+        correctAnswer: "William Shakespeare",
+        userAnswer: "Charles Dickens"
+      }
+    },
+    {
+      questionId: "q7",
+      questionText: "The Sun rises in the East.",
+      questionNumber: 7,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "trueFalse",
+        correctAnswer: true,
+        userAnswer: true
+      }
+    },
+    {
+      questionId: "q8",
+      questionText: "Select prime numbers.",
+      questionNumber: 8,
+      answerOutcome: "incorrect",
+      pointsEarned: 0,
+      pointsPossible: 5,
+      answer: {
+        questionType: "multipleChoice",
+        correctAnswer: ["a", "b", "d"],
+        userAnswer: ["a", "c"],
+        options: [
+          { id: "a", label: "2" },
+          { id: "b", label: "3" },
+          { id: "c", label: "4" },
+          { id: "d", label: "5" }
+        ]
+      }
+    },
+    {
+      questionId: "q9",
+      questionText: "What is the chemical symbol for gold?",
+      questionNumber: 9,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "textInput",
+        correctAnswer: "Au",
+        userAnswer: "Au"
+      }
+    },
+    {
+      questionId: "q10",
+      questionText: "5 * 6 = ?",
+      questionNumber: 10,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "numeric",
+        correctAnswer: 30,
+        userAnswer: 30
+      }
+    },
+    {
+      questionId: "q11",
+      questionText: "Water is composed of hydrogen and oxygen.",
+      questionNumber: 11,
+      answerOutcome: "correct",
+      pointsEarned: 5,
+      pointsPossible: 5,
+      answer: {
+        questionType: "trueFalse",
+        correctAnswer: true,
+        userAnswer: true
+      }
+    },
+    {
+      questionId: "q12",
+      questionText: "Select colors that are primary colors.",
+      questionNumber: 12,
       answerOutcome: "skipped",
       pointsEarned: 0,
       pointsPossible: 5,
       answer: {
-        questionType: "textInput", // User skipped this question!
-        correctAnswer: "console.log()",
-      },
-    },
-  ],
+        questionType: "multipleChoice",
+        correctAnswer: ["a", "c"],
+        userAnswer: undefined,
+        options: [
+          { id: "a", label: "Red" },
+          { id: "b", label: "Green" },
+          { id: "c", label: "Blue" },
+          { id: "d", label: "Yellow" }
+        ]
+      }
+    }
+  ]
 };

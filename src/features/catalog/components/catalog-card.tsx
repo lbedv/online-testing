@@ -9,11 +9,12 @@ import {
 import { Link } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { HelpCircle, User, Users } from "lucide-react"
+import { Clock, HelpCircle, User, Users } from "lucide-react"
 import { IconStat } from "@/components/common"
 import { DIFFICULTY_LABELS } from "@/shared/types/test"
 import type { CatalogTest } from "../types"
 import { DIFFICULTY_STYLES } from "../constants"
+import { formatDuration } from "@/shared/lib/date"
 
 interface CatalogCardProps {
   test: CatalogTest
@@ -63,6 +64,10 @@ export function CatalogCard({ test }: CatalogCardProps) {
           <IconStat
             icon={<Users className="h-3.5 w-3.5" />}
             value={`${test.attemptsCount} attempts`}
+          />
+          <IconStat
+            icon={<Clock className="h-3.5 w-3.5" />}
+            value={formatDuration(test.timeLimitSeconds)}
           />
         </div>
 

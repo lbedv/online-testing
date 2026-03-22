@@ -99,6 +99,9 @@ export function ScoreCard({ result }: ScoreCardProps) {
             <Badge variant="outline" className="text-xs text-muted-foreground border-border bg-muted/30">
               {questions.length} questions
             </Badge>
+            <Badge variant="outline" className="text-xs text-muted-foreground border-border bg-muted/30">
+              {formatDuration(result.timeLimitSeconds)}
+            </Badge>
           </div>
         </div>
         

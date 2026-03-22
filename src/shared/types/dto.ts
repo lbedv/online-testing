@@ -1,3 +1,4 @@
+// Future zod schemas
 import type { Category, Difficulty, TestOwnership } from "./test";
 
 // User profile DTO
@@ -39,6 +40,7 @@ export interface CatalogTestDto {
   difficulty: Difficulty;
   questionsCount: number
   attemptsCount: number
+  timeLimitSeconds: number
   author: {
     firstName: string;
     lastName: string;
