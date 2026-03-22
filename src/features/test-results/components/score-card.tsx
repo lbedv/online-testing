@@ -5,12 +5,12 @@ import { cn } from "@/shared/lib/utils"
 import { CheckCircle2, XCircle, MinusCircle, Clock, Trophy } from "lucide-react"
 import { formatDuration } from "@/shared/lib/date"
 import { SCORE_STYLE_MAP } from "../constants"
-import type { TestResult, ScoreStatus } from "../types"
+import type { TestResultView, ScoreStatus } from "../types"
 import { countAnswerOutcomes } from "../utils/answer-utils"
 import { CATEGORY_LABELS, DIFFICULTY_LABELS } from '@/shared/types/test';
 
 interface ScoreCardProps {
-  result: TestResult
+  result: TestResultView
 }
 
 export function ScoreCard({ result }: ScoreCardProps) {

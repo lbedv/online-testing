@@ -1,10 +1,11 @@
 import type { AnswerResultView } from "@/shared/types/answer";
+import type { Category, Difficulty } from "@/shared/types/test";
 
 export type ScoreStatus = "excellent" | "passed" | "failed"
 
 export type AnswerOutcome = "correct" | "incorrect" | "skipped"
 
-export interface QuestionResult {
+export interface QuestionResultView {
   questionId: string
   questionText: string;
   questionNumber: number;
@@ -18,17 +19,17 @@ export interface QuestionResult {
  * Complete test result with all metrics and individual question breakdowns.
  * Displayed on the results page after test submission.
  */
-export interface TestResult {
+export interface TestResultView {
   resultId: string
   testId: string
   testTitle: string
-  testCategory: string
-  testDifficulty: string
+  testCategory: Category
+  testDifficulty: Difficulty
   pointsEarned: number
   totalPoints: number
   percentage: number
   timeTakenSeconds: number
   completedAt: string
   isPassed: boolean
-  questions: QuestionResult[]
+  questions: QuestionResultView[]
 }

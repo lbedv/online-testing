@@ -1,8 +1,8 @@
 import { useState } from "react"
-import type { AnswerOutcome, QuestionResult } from "../types"
+import type { AnswerOutcome, QuestionResultView } from "../types"
 import { countAnswerOutcomes } from "../utils/answer-utils";
 
-export function useQuestionsFilter(questions: QuestionResult[]) {
+export function useQuestionsFilter(questions: QuestionResultView[]) {
   const [filter, setFilter] = useState<AnswerOutcome | undefined>(undefined)
 
   const filtered = questions.filter((q) => {

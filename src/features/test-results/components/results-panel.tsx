@@ -2,13 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion } from "@/components/ui/accordion"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { ListChecks } from "lucide-react"
-import type { AnswerOutcome, QuestionResult } from "../types"
+import type { AnswerOutcome, QuestionResultView } from "../types"
 import { QuestionBreakdown } from "./question-breakdown"
 import { useQuestionsFilter } from "../hooks/use-questions-filter"
 import { FILTER_OPTIONS } from "../constants"
 
 interface ResultsPanelProps {
-  questions: QuestionResult[]
+  questions: QuestionResultView[]
 }
 
 export function ResultsPanel({ questions }: ResultsPanelProps) {

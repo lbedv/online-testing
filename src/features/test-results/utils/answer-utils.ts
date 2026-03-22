@@ -1,8 +1,8 @@
-import type { QuestionResult } from "../types";
+import type { QuestionResultView } from "../types";
 import type { AnswerResultView } from "@/shared/types/answer";
 
 
-export function countAnswerOutcomes(questions: QuestionResult[]) {
+export function countAnswerOutcomes(questions: QuestionResultView[]) {
   return {
     correct: questions.filter((q) => q.answerOutcome === "correct").length,
     incorrect: questions.filter((q) => q.answerOutcome === "incorrect").length,
