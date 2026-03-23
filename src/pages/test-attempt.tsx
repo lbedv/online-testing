@@ -1,1 +1,13 @@
-export const TestAttemptPage = () => <div><h1>Taking Test...</h1></div>;
+import { TestContainer, useGetTest } from "@/features/test-attempt";
+
+export function TestAttemptPage () {
+  const data = useGetTest()
+
+  return (
+      <div>
+      <TestContainer
+          test={data}
+      />
+      </div>
+  )
+} 
