@@ -1,4 +1,5 @@
 import { TestHeader } from "./test-header"
+import { ActiveQuestionRenderer } from "./active-question-renderer"
 import { TestNavigation } from "./test-navigation"
 import { useTestTimer } from "../hooks/use-test-timer"
 import { useTestManager } from "../hooks/use-test-manager"
@@ -12,8 +13,11 @@ export function TestContainer({ test }: TestContainerProps) {
 
   const {
     currentIndex,
+    currentQuestion,
+    currentAnswer,
     questionsCount,
     answeredCount,
+    setAnswer,
     goToNextQuestion,
     goToPrevQuestion,
   } = useTestManager(
@@ -33,6 +37,18 @@ export function TestContainer({ test }: TestContainerProps) {
         answeredCount={answeredCount}
         questionsCount={questionsCount}
       />
+
+      <div className="flex-1 flex flex-col px-4 py-6">
+        <div className="w-full max-w-2xl">
+          <ActiveQuestionRenderer
+            currentQuestion={currentQuestion}
+            currentIndex={currentIndex}
+            questionsCount={questionsCount}
+            currentAnswer={currentAnswer}
+            setAnswer={setAnswer}
+          />
+        </div>
+      </div>
 
       <TestNavigation
         currentIndex={currentIndex}
