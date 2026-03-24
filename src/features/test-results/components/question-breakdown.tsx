@@ -37,7 +37,7 @@ export function QuestionBreakdown({ question: q, value }: QuestionBreakdownProps
                 {QUESTION_TYPE_LABELS[q.answer.questionType]}
               </Badge>
             </div>
-            <span className="truncate text-sm text-muted-foreground">
+            <span className="line-clamp-2 text-sm text-muted-foreground">
               {q.questionText}
             </span>
           </div>

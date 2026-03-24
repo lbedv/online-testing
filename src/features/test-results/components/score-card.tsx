@@ -37,8 +37,8 @@ export function ScoreCard({ result }: ScoreCardProps) {
         
         {/* Left Section: Core Score & Status */}
         <div className="flex flex-col p-5 md:p-6 gap-4 md:border-r border-border md:w-60 shrink-0">
-          <div className="flex items-center justify-between gap-3">
-            <Badge variant="secondary" className={cn("border-transparent font-semibold text-sm py-1 px-3", scoreStyle.badge)}>
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <Badge variant="secondary" className={cn("border-transparent font-semibold text-sm py-1 px-3 whitespace-normal wrap-break-word", scoreStyle.badge)}>
               {scoreStyle.label}
             </Badge>
             <div className="flex items-center gap-1.5 text-sm font-medium text-foreground">

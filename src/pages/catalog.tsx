@@ -23,7 +23,7 @@ export function CatalogPage() {
   } = useCatalogFilters()
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col min-h-screen gap-6">
       <PageHeader
         title="Browse Tests"
         description="Explore your tests or discover public tests from the community."
@@ -51,11 +51,13 @@ export function CatalogPage() {
             ))}
           </div>
         )}
+      <div className="mt-auto py-6 border-t bg-background">
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
+      </div>
     </div>
   )
 }
