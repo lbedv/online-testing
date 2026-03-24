@@ -5,6 +5,8 @@ import { TestNavigation } from "./test-navigation"
 import { useTestTimer } from "../hooks/use-test-timer"
 import { useTestManager } from "../hooks/use-test-manager"
 import { useQuestionGrid } from "../hooks/use-question-grid";
+import { SubmitDialog } from "./submit-dialog";
+import { useSubmitDialog } from "../hooks/use-submit-dialog";
 import type { TestClientView } from "../types";
 
 interface TestContainerProps {
@@ -37,6 +39,14 @@ export function TestContainer({ test }: TestContainerProps) {
     currentIndex, 
     setSafeCurrentIndex
   );
+  const  {
+    showFinishDialog,
+    isLoading,
+    setShowFinishDialog,
+    handleConfirmSubmit,
+    handleSubmit
+   } = useSubmitDialog( test.id )
+
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -75,7 +85,16 @@ export function TestContainer({ test }: TestContainerProps) {
         questionsCount={questionsCount}
         goToPrevQuestion={goToPrevQuestion}
         goToNextQuestion={goToNextQuestion}
-        onSubmit={() => {}}
+        onSubmit={handleSubmit}
+      />
+
+      <SubmitDialog
+        open={showFinishDialog}
+        onOpenChange={setShowFinishDialog}
+        skippedCount={questionsCount - answeredCount}
+        questionsCount={questionsCount}
+        isSubmitting={isLoading}
+        onConfirmSubmit={handleConfirmSubmit}
       />
     </div>
   )
