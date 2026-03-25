@@ -13,6 +13,11 @@ interface ScoreCardProps {
   result: TestResultView
 }
 
+/**
+ * ScoreCard component - Displays a summary of the test results, including final score, percentage, and detailed stats.
+ * Shows a badge indicating pass/fail/excellent status, and breakdown of correct/incorrect/skipped answers.
+ * Also includes metadata about the test such as category, difficulty, question count, and time limit.
+ */
 export function ScoreCard({ result }: ScoreCardProps) {
   const {
     questions,

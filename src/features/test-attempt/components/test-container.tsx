@@ -13,6 +13,10 @@ interface TestContainerProps {
   test: TestClientView
 }
 
+/**
+ * TestContainer component - Main container for the test attempt interface.
+ * Manages state and logic for the test attempt, including current question, answers, timer, and submission.
+ */
 export function TestContainer({ test }: TestContainerProps) {
 
   const {

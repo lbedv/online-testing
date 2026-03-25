@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate, useLocation } from "@tanstack/react-router"
+import { Link, useNavigate, useLocation } from "@tanstack/react-router"
 import { LogOut, Menu } from "lucide-react"
 import { TestPlatformLogo } from "../common"
 import { Button } from "@/components/ui/button"
@@ -15,6 +15,11 @@ import { NavItem } from "./nav-item"
 import PathConstants from "@/routes/path-constants"
 import { MAIN_NAV_ITEMS, isNavItemActive } from "./nav-config"
 
+/**
+ * MobileHeader component - A responsive header for mobile devices.
+ * Contains the logo and a hamburger menu that opens a side sheet with navigation links.
+ * The side sheet includes main navigation items, theme toggle, and logout option.
+ */
 export function MobileHeader() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -41,16 +46,18 @@ export function MobileHeader() {
             {MAIN_NAV_ITEMS.map((item) => {
               const isActive = isNavItemActive(item.href, pathname)
               return (
-                <NavItem
+                <Link
                   key={item.href}
-                  icon={<item.icon className="h-4 w-4 shrink-0" />}
-                  label={item.label}
-                  isActive={isActive}
-                  onClick={() => {
-                    navigate({ to: item.href })
-                    setOpen(false)
-                  }}
-                />
+                  to={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block"
+                >
+                  <NavItem
+                    icon={<item.icon className="h-4 w-4 shrink-0" />}
+                    label={item.label}
+                    isActive={isActive}
+                  />
+                </Link>
               )
             })}
           </nav>

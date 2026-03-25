@@ -9,6 +9,10 @@ interface QuestionAnswerBlockProps {
   answerOutcome: AnswerOutcome
 }
 
+/**
+ * QuestionAnswerBlock component - Displays the user's answer and the correct answer for a question in the results breakdown.
+ * Applies different styling based on whether the user's answer was correct, incorrect, or skipped.
+ */
 export function QuestionAnswerBlock({ answer, answerOutcome }: QuestionAnswerBlockProps) {
   const { userText, correctText } = formatAnswers(answer, answerOutcome === "skipped");
 

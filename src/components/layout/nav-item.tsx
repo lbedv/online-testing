@@ -7,6 +7,10 @@ interface NavItemProps {
   onClick?: () => void
 }
 
+/**
+ * NavItem component - Represents a single navigation item in the mobile header's side sheet.
+ * Calls onClick when clicked to navigate or perform an action.
+ */
 export function NavItem({
   icon,
   label,

@@ -1,5 +1,6 @@
 import { Textarea } from "@/components/ui/textarea"
 
+// TextInput component - Renders a text input field for open-ended questions.
 export function TextInput({
   value,
   onChange,

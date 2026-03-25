@@ -14,6 +14,11 @@ interface QuestionGridProps {
   isAnswered: (id: string) => boolean
 }
 
+/**
+ * QuestionGrid component - Displays a grid of question numbers for the current block of questions in the test attempt interface.
+ * Allows users to navigate between questions within the current block, and also navigate to the next or previous block of questions.
+ * Each question number is styled to indicate whether it has been answered or not, and the current question is highlighted.
+ */
 export function QuestionGrid({
   currentIndex,
   currentBlockIndex,

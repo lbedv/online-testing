@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input"
 
+// NumericInput component - Renders a numeric input field for questions.
 export function NumericInput({
   value,
   onChange,

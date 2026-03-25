@@ -1,6 +1,9 @@
 import { History } from "lucide-react"
 import { EmptyState } from "@/components/common/empty-state"
 
+/**
+ * DashboardEmpty component - Displays an empty state when there are no recent attempts.
+ */
 export function DashboardEmpty() {
   return (
     <EmptyState

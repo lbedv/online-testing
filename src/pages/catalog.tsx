@@ -10,6 +10,7 @@ import PathConstants from "@/routes/path-constants"
 import { PlusCircle } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 
+// CatalogPage component - Displays a list of tests with filtering and pagination.
 export function CatalogPage() {
   const {
     filters,

@@ -21,6 +21,10 @@ interface ActiveQuestionRendererProps {
   ) => void
 }
 
+/**
+ * ActiveQuestionRenderer component - Renders the current question and its input field based on its type.
+ * Manages the state of the user's answer for the current question and updates it as the user interacts with the input.
+ */
 export function ActiveQuestionRenderer({
   currentQuestion,
   currentIndex,

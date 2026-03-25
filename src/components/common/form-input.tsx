@@ -11,6 +11,10 @@ export interface FormInputProps extends React.InputHTMLAttributes<HTMLInputEleme
   inputClassName?: string
 }
 
+/**
+ * A reusable form input component that supports various types, 
+ * validation states, and an optional password visibility toggle.
+ */
 export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
   (
     {

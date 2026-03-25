@@ -19,6 +19,11 @@ interface SubmitDialogProps {
   onConfirmSubmit: () => void
 }
 
+/**
+ * SubmitDialog component - Confirmation dialog for submitting the test attempt.
+ * Displays a warning if there are unanswered questions, and a success message if all questions are answered.
+ * Provides options to go back and review answers or to confirm submission.
+ */
 export function SubmitDialog({
   open,
   onOpenChange,

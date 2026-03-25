@@ -23,7 +23,6 @@ interface CatalogCardProps {
 /**
  * CatalogCard component - Displays a single test card in the catalog with metadata.
  * Shows test title, author name,description, difficulty, question and and attempt counts.
- * Provides actions to take the test or edit if user is the owner and test is still in draft.
  */
 export function CatalogCard({ test }: CatalogCardProps) {
   const isOwner = test.ownership === "mine"

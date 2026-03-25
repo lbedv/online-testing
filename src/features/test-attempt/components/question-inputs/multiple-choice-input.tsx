@@ -1,6 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 
+// MultipleChoiceInput component - Renders a multiple choice question input using checkboxes.
 export function MultipleChoiceInput({
   options,
   value,

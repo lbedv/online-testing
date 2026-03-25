@@ -1,6 +1,7 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 
+// TrueFalseInput component - Renders a true/false question input using radio buttons.
 export function TrueFalseInput({
   value,
   onChange,

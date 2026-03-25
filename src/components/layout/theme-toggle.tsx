@@ -3,6 +3,10 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 import { cn } from "@/shared/lib/utils"
 
+/**
+ * ThemeToggle component - A button that allows users to switch between light and dark themes.
+ * It uses the next-themes library to manage theme state and persists the user's choice.
+ */
 export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)

@@ -1,5 +1,8 @@
 import type { Category } from "@/shared/types/test"
 
+/** 
+ * AttemptItem interface - Represents a single test attempt in the dashboard.
+ */
 export interface AttemptItem {
   id: string
   testId: string
@@ -13,6 +16,9 @@ export interface AttemptItem {
   isPassed: boolean
 }
 
+/**
+ * DashboardStats interface - Represents aggregated statistics for the user's dashboard.
+ */
 export interface DashboardStats {
   totalTestsTaken: number
   averageScore: number

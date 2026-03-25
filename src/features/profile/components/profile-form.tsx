@@ -20,6 +20,10 @@ interface ProfileFormProps {
   initialEmail: string
 }
 
+/**
+ * ProfileForm component - A form for updating user profile information.
+ * Uses react-hook-form for form state management and zod for validation.
+ */
 export function ProfileForm({
   initialFirstName,
   initialLastName,

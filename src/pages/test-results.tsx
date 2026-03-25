@@ -7,6 +7,7 @@ import {
   useTestResults,
 } from "@/features/test-results"
 
+// TestResultsPage component - Displays the results of a completed test, including score summary and question breakdown.
 export function TestResultsPage() {
   const { items } = useTestResults()
 

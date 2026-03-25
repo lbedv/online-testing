@@ -1,6 +1,7 @@
 import { Outlet } from "@tanstack/react-router"
 import { Sidebar, MobileHeader } from "@/components/layout"
 
+// Main layout component that wraps around all pages except authentication.
 export function Layout() {
   return (
     <div className="flex h-screen bg-background">

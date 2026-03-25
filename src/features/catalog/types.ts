@@ -25,6 +25,9 @@ export interface CatalogTest {
   createdAt: string             // ISO date string for when test was created
 }
 
+/**
+ * Filter and sorting parameters for the test catalog.
+ */
 export interface CatalogFilterParams {
   search?: string;
   category?: Category;

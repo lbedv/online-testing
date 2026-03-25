@@ -12,6 +12,10 @@ interface AttemptsListProps{
   attempts: AttemptItem[]
 }
 
+/**
+ * AttemptsList component - Displays a paginated list of recent test attempts.
+ * Shows AttemptCard for each attempt and includes pagination controls.
+ */
 export function AttemptsList({ attempts }: AttemptsListProps) {
 
   const { paginatedItems, currentPage, totalPages, setCurrentPage } = 

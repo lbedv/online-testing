@@ -2,6 +2,10 @@ import { useMemo } from "react";
 import { CATALOG_TESTS } from "../mock-data";
 import type { CatalogFilterParams } from "../types";
 
+/**
+ * useCatalogTests hook - Filters and sorts catalog tests based on provided parameters.
+ * Returns a memoized list of tests that match the criteria.
+ */
 export function useCatalogTests({
   search,
   category,

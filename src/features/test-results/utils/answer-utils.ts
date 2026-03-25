@@ -1,7 +1,11 @@
 import type { QuestionResultView } from "../types";
 import type { AnswerResultView } from "@/shared/types/answer";
 
-
+/**
+ * countAnswerOutcomes - Utility function to count the number of correct, incorrect, and skipped answers in a list of question results.
+ * @param questions - An array of QuestionResultView objects representing the results of each question.
+ * @returns An object containing the counts of correct, incorrect, and skipped answers.
+ */
 export function countAnswerOutcomes(questions: QuestionResultView[]) {
   return {
     correct: questions.filter((q) => q.answerOutcome === "correct").length,
@@ -10,6 +14,10 @@ export function countAnswerOutcomes(questions: QuestionResultView[]) {
   }
 }
 
+/**
+ * formatAnswers - Utility function to format the user's answer and the correct answer for display in the results breakdown.
+ * Handles different question types (numeric, true/false, multiple choice, text input) and accounts for skipped questions.
+ */
 export function formatAnswers(variant: AnswerResultView, isSkipped: boolean) {
   const noAnswerText = "No answer provided";
 

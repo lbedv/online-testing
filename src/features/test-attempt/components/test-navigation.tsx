@@ -9,6 +9,11 @@ interface TestNavigationProps {
   onSubmit: () => void
 }
 
+/**
+ * TestNavigation component - Provides navigation controls for the test attempt interface.
+ * Displays "Previous" and "Next" buttons to navigate between questions, and a "Submit Test" button on the last question.
+ * Also shows the current question number and total question count for user reference.
+ */
 export function TestNavigation({
   currentIndex,
   questionsCount,

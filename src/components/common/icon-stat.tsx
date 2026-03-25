@@ -6,6 +6,10 @@ interface IconStatProps {
   className?: string
 }
 
+/**
+ * A simple component that displays an icon alongside a value. 
+ * typically used for showing stats or metadata in a compact form.
+ */
 export function IconStat({
   icon,
   value,

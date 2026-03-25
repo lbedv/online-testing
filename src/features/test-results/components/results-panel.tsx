@@ -11,6 +11,10 @@ interface ResultsPanelProps {
   questions: QuestionResultView[]
 }
 
+/**
+ * ResultsPanel component - Displays a detailed breakdown of test results by question.
+ * Uses the QuestionBreakdown component to show details for each question, and a ToggleGroup for filtering.
+ */
 export function ResultsPanel({ questions }: ResultsPanelProps) {
   const { filter, setFilter, filtered, counts } = useQuestionsFilter(questions)
 

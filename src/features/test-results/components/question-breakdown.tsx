@@ -15,6 +15,11 @@ interface QuestionBreakdownProps {
   value: string
 }
 
+/**
+ * QuestionBreakdown component - Displays a single question's breakdown in the results panel.
+ * Shows question text, type, points earned, and a visual indicator of correctness.
+ * When expanded, reveals the user's answer and the correct answer with appropriate styling.
+ */
 export function QuestionBreakdown({ question: q, value }: QuestionBreakdownProps) {
   const outcome = q.answerOutcome
   const { label, icon: StatusIcon, color } = ANSWER_ICON_MAP[outcome]

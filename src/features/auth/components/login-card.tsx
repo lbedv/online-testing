@@ -11,6 +11,10 @@ import { LoginSchema, type LoginFormData } from "../schemas"
 const inputClassName =
   "h-11 rounded-xl bg-background/60 transition-all duration-200 focus:bg-background dark:bg-muted/30 dark:focus:bg-muted/50"
 
+/**
+ * LoginCard component - A card that contains the login form.
+ * Uses react-hook-form for form state management and zod for validation.
+ */
 export function LoginCard() {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()

@@ -11,6 +11,10 @@ import { RegisterSchema, type RegisterFormData } from "../schemas"
 const inputClassName =
   "h-11 rounded-xl bg-background/60 transition-all duration-200 focus:bg-background dark:bg-muted/30 dark:focus:bg-muted/50"
 
+/**
+ * RegisterCard component - A card that contains the registration form.
+ * Uses react-hook-form for form state management and zod for validation.
+*/
 export function RegisterCard() {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()

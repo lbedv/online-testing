@@ -5,6 +5,9 @@ type WelcomeHeaderProps = {
     lastName: string
 }
 
+/**
+ * WelcomeHeader component - Displays a welcome message with the user's initials.
+ */
 export function WelcomeHeader({ firstName, lastName }: WelcomeHeaderProps) {
   const initials = `${firstName[0]}${lastName[0]}`.toUpperCase()
   

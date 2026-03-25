@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { PageHeader } from "@/components/common/page-header";
 import { useUserInfo } from "@/features/profile/";
 
+// ProfilePage component - Displays user profile information and forms to update details and password.
 export function ProfilePage() {
   const { items: user } = useUserInfo();
 

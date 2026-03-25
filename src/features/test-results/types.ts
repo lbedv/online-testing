@@ -5,6 +5,9 @@ export type ScoreStatus = "excellent" | "passed" | "failed"
 
 export type AnswerOutcome = "correct" | "incorrect" | "skipped"
 
+/**
+ * QuestionResultView represents the result of a single question in a test attempt.
+ */
 export interface QuestionResultView {
   questionId: string
   questionText: string;

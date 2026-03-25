@@ -7,6 +7,10 @@ interface ResultsActionsProps {
   testId: string
 }
 
+/**
+ * ResultsActions component - Provides action buttons on the test results page.
+ * Includes options to retake the test or return to the dashboard.
+ */
 export function ResultsActions({ testId }: ResultsActionsProps) {
   return (
     <div className="flex flex-col items-center gap-3 pb-8 sm:flex-row sm:justify-center">
