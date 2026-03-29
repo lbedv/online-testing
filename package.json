@@ -1,8 +1,23 @@
 {
   "name": "test-platform",
   "private": true,
+  "version": "1.0.0",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/client",
+    "dev:all": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "build:client": "npm run build --workspace=apps/client",
+    "build:server": "npm run build --workspace=apps/server",
+    "lint": "npm run lint --workspaces --if-present",
+    "preview": "npm run preview --workspace=apps/client",
+    "type-check": "npm run type-check --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present && rimraf node_modules"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
 }
