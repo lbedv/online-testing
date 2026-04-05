@@ -2,22 +2,22 @@
   "name": "test-platform",
   "private": true,
   "version": "1.0.0",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "npm run dev --workspace=apps/client",
-    "dev:all": "npm run dev --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "build:client": "npm run build --workspace=apps/client",
-    "build:server": "npm run build --workspace=apps/server",
-    "lint": "npm run lint --workspaces --if-present",
-    "preview": "npm run preview --workspace=apps/client",
-    "type-check": "npm run type-check --workspaces --if-present",
-    "clean": "npm run clean --workspaces --if-present && rimraf node_modules"
+    "dev:client": "pnpm --filter ./apps/client dev",
+    "dev:server": "pnpm --filter ./apps/server dev",
+    "dev:all": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "build:client": "pnpm --filter ./apps/client build",
+    "build:server": "pnpm --filter ./apps/server build",
+    "lint": "pnpm -r lint",
+    "preview": "pnpm --filter ./apps/client preview",
+    "type-check": "pnpm -r type-check",
+    "clean": "pnpm -r clean && rimraf node_modules"
   },
   "devDependencies": {
     "rimraf": "^6.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "msw"]
   }
 }
